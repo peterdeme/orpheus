@@ -1,0 +1,48 @@
+header.navbar {
+    background: linear-gradient(135deg,#0143a3,#0273d4);
+}
+
+.settings-button {
+    color: #fafcff;
+    border-color: #8bc3ff;
+}
+
+.router-container {
+ padding-top: 30px;
+}
+
+/****** TOAST CSS /******/
+
+::ng-deep .ngb-toasts {
+    margin-top: 70px !important;
+    margin-right: 20px !important;
+}
+
+::ng-deep .ngb-toasts .show {
+  visibility: visible;
+  /* Animation: Take 1.0 seconds to fade in and out the snackbar. 
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 1.0s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}

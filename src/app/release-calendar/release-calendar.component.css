@@ -1,0 +1,20 @@
+::ng-deep .cal-month-view .cal-open-day-events {
+  color: #212529;
+  background-color: white;
+  box-shadow: inset 0 0 15px 0 rgba(92, 89, 243, 0.091);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+::ng-deep .cal-month-view .cal-day-badge {
+  background-color: #314dd0;
+  color: #fff;
+}
+
+.cal-week-view .cal-time-events .cal-day-column {
+  margin-right: 10px;
+}
+
+.cal-week-view .cal-hour {
+  width: calc(100% + 10px);
+}

@@ -1,0 +1,20 @@
+@import "//cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css";
+
+
+.margin-wide {
+    margin-bottom: 5rem !important;
+    margin-top: 2rem;
+}
+
+.calendar-chooser-width {
+    max-width: 200px;
+}
+
+.blue {
+    color: #007bff;
+}
+
+::ng-deep ngb-typeahead-window {
+    overflow-y: scroll;
+    max-height: 350px;
+}

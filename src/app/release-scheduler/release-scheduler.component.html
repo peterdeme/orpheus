@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center" [ngClass]="additionalCss">
+    <button type="button" class="btn btn-outline-primary" (click)="openModal()">
+        Schedule new release
+    </button>
+</div>
+
+<ng-template #modalContent let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Release scheduling</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="selectedEnvDropdown">Environment</label>
+                <input id="selectedEnvDropdown" placeholder="Click here to choose environment" name="selectedEnv"
+                    type="text" class="form-control" [(ngModel)]="selectedEnvironment"
+                    [ngbTypeahead]="searchEnvironment" (focus)="selectedEnvFocus$.next($event.target.value)"
+                    (click)="selectedEnvClick$.next($event.target.value)" #selectedEnvRef="ngbTypeahead" />
+            </div>
+            <div class="form-group">
+                <label for="selectedStackDropdown">Stack</label>
+                <input id="selectedStackDropdown" placeholder="Click here to choose stack" name="selectedStacm"
+                    type="text" class="form-control" [(ngModel)]="selectedStack" [ngbTypeahead]="searchStack"
+                    (focus)="selectedStackFocus$.next($event.target.value)"
+                    (click)="selectedStackClick$.next($event.target.value)" #selectedStackRef="ngbTypeahead" />
+            </div>
+            <div class="form-group">
+                <label for="versionInput">Version</label>
+                <input id="versionInput" class="form-control" placeholder="Type version identifier">
+
+            </div>
+            <div class="form-group">
+                <label for="dateOfReleasePicker">Date of release</label>
+                <div class="input-group calendar-chooser-width">
+                    <input id="dateOfReleasePicker" class="form-control" placeholder="yyyy-mm-dd" name="dp"
+                        ngbDatepicker #dp="ngbDatepicker">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button">
+                            <i class="mdi mdi-calendar blue"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Notes</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-primary" (click)="modal.dismiss('Cross click')">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Schedule</button>
+    </div>
+</ng-template>

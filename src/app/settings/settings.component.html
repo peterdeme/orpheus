@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-12 col-lg-2 left-menu-style toc-item">
+        <ul class="nav flex-column">
+            <li>
+                <a class="toc-link" routerLink="./environments">Environments</a>
+            </li>
+            <li *ngFor="let env of environmentNames">
+                <a class="toc-link sub-toc" routerLink="./environments/{{env}}">{{env}}</a>
+            </li>
+            <li>
+                <a class="toc-link">Roles</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-12 col-lg-10 container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

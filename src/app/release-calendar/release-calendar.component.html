@@ -1,0 +1,15 @@
+<app-release-scheduler [additionalCss]="'margin-wide'">
+</app-release-scheduler>
+
+<app-calendar-header [(view)]="view" [(viewDate)]="viewDate">
+</app-calendar-header>
+
+<div [ngSwitch]="view" class="mb-5">
+    <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" (dayClicked)="dayClicked($event.day)"
+        [events]="events" [activeDayIsOpen]="activeDayIsOpen">
+    </mwl-calendar-month-view>
+    <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events">
+    </mwl-calendar-week-view>
+    <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events">
+    </mwl-calendar-day-view>
+</div>

@@ -1,0 +1,91 @@
+<button type="button" class="btn btn-outline-primary mb-4 ml-4">
+    Add new environment
+</button>
+
+<div *ngIf="environmentName" class="ml-4">
+    <header class="pt-3 pb-md-3 px-2 px-lg-3 d-flex d-md-block align-items-center title">
+        <h1 class=""><i class="mdi mdi-sitemap mr-1"></i>{{environmentName}}</h1>
+    </header>
+    <section>
+        <ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs">
+            <li [ngbNavItem]="1">
+                <a ngbNavLink>General</a>
+                <ng-template ngbNavContent>
+                    <form>
+                        <div class="form-group my-4">
+                            <label for="displayName">Friendly name</label>
+                            <input class="form-control" id="displayName" aria-describedby="displayNameHelp"
+                                placeholder="Enter display name">
+                            <small id="displayNameHelp" class="form-text text-muted">User friendly name of
+                                an environment. First character should be uppercase. Example: Staging,
+                                Production.</small>
+                        </div>
+                        <div class="form-group my-4">
+                            <label for="envIdentifier">Environment identifier</label>
+                            <input class="form-control" id="envIdentifier" aria-describedby="envIdentifierHelp"
+                                placeholder="Enter environment identifier">
+                            <small id="envIdentifierHelp" class="form-text text-muted">Environment identifier is getting
+                                passed in as EnvironmentName variable to the
+                                Cloudformation stacks. Example: staging, prod.</small>
+                        </div>
+                        <div class="form-check my-4">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1" aria-describedby="devEnvHelper">Is dev
+                                environment</label>
+                            <small id="devEnvHelper" class="form-text text-muted">If it's a dev environment we don't
+                                enforce approvals for deployments.</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+                <a ngbNavLink>Cloudformation parameters</a>
+                <ng-template ngbNavContent>
+                    <div class="row my-1" *ngFor="let cf of cloudformationParameters">
+                        <div class="col-5 form-group">
+                            <input class="form-control" placeholder="Key" [(ngModel)]="cf.key">
+                        </div>
+                        <div class="col-5 form-group">
+                            <input class="form-control" placeholder="Value" [(ngModel)]="cf.value">
+                        </div>
+                        <div class="col-2 form-group d-flex justify-content-end">
+                            <button type="button" class="btn btn-danger"
+                                (click)="removeCloudformationParameter(cf.key)">Remove</button>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between px-3">
+                        <button type="button" class="btn btn-primary" (click)="addCloudformationParameter()">
+                            Add parameter
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            Save
+                        </button>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+                <a ngbNavLink>Slack notifications</a>
+                <ng-template ngbNavContent>
+                    <div class="row my-1" *ngFor="let hook of slackHookUrls">
+                        <div class="col-10 form-group">
+                            <input class="form-control" placeholder="Key" [(ngModel)]="hook.url">
+                        </div>
+                        <div class="col-2 form-group d-flex justify-content-end">
+                            <button type="button" class="btn btn-danger"
+                                (click)="removeSlackHook(hook.url)">Remove</button> </div>
+                    </div>
+                    <div class="row justify-content-between px-3">
+                        <button type="button" class="btn btn-primary" (click)="addSlackHookUrl()">
+                            Add hook
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            Save
+                        </button>
+                    </div>
+                </ng-template>
+            </li>
+        </ul>
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </section>
+</div>

@@ -1,0 +1,10 @@
+.group-container {
+    flex-direction: initial;
+    background: rgba(240, 248, 255, 0.4);
+}
+
+h1 {
+    display: inline-block;
+    margin-left: 90px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
