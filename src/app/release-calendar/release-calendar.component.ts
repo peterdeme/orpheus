@@ -11,7 +11,7 @@ import * as moment from 'moment';
 })
 export class ReleaseCalendarComponent {
   view: CalendarView = CalendarView.Month;
-  activeDayIsOpen = false;
+  activeDayIsOpen = true;
 
   viewDate: Date = moment().toDate();
 
