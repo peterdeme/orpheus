@@ -17,7 +17,7 @@
                             <input class="form-control" id="displayName" aria-describedby="displayNameHelp"
                                 placeholder="Enter display name">
                             <small id="displayNameHelp" class="form-text text-muted">User friendly name of
-                                an environment. First character should be uppercase. Example: Staging,
+                                an environment. First character should be uppercase. Example: Beta,
                                 Production.</small>
                         </div>
                         <div class="form-group my-4">
@@ -26,7 +26,7 @@
                                 placeholder="Enter environment identifier">
                             <small id="envIdentifierHelp" class="form-text text-muted">Environment identifier is getting
                                 passed in as EnvironmentName variable to the
-                                Cloudformation stacks. Example: staging, prod.</small>
+                                Cloudformation stacks. Example: Beta, prod.</small>
                         </div>
                         <div class="form-check my-4">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -73,10 +73,11 @@
                         </div>
                         <div class="col-2 form-group d-flex justify-content-end">
                             <button type="button" class="btn btn-danger"
-                                (click)="removeSlackHook(hook.url)">Remove</button> </div>
+                                (click)="removeSlackHook(hook.url)">Remove</button>
+                        </div>
                     </div>
                     <div class="row justify-content-between px-3">
-                        <button type="button" class="btn btn-primary" (click)="addSlackHookUrl()">
+                        <button type="button" class="btn btn-primary" (click)="aDriverDatalackHookUrl()">
                             Add hook
                         </button>
                         <button type="button" class="btn btn-primary">

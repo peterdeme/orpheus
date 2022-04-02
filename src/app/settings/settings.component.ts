@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-  environmentNames = ['Staging', 'Budapest', 'Neumann'];
+  environmentNames = ['Beta', 'Alpha', 'Production'];
 
   constructor() { }
 

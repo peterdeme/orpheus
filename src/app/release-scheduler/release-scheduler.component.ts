@@ -12,12 +12,11 @@ import { ToastService } from '../services/toast-service';
 export class ReleaseSchedulerComponent {
     @ViewChild('modalContent') modalContentRef;
     @Input() additionalCss?: string | string[];
-    environments = ['Staging', 'Budapest', 'Neumann'];
-    stacks = ['Aurora', 'Redis Cache', 'Maps', 'UBI3 Enroll', 'Pushit ETL',
-        'Pushit Scheduled Events', 'Monitoring Period ETL', 'ECS Capacity',
-        'Nginx proxy', 'DEX', 'SQS Dog', 'Frame Loom', 'Zengage', 'Zengage Monitoring',
-        'Zengage DriverSync', 'Zengage KMS', 'Zengage Elasticsearch', 'Engage3', 'History Service', 'DDS Cass',
-        'UBI3', 'Bruce', 'Mobile', 'Zuul'];
+    environments = ['Beta', 'Alpha', 'Production'];
+    stacks = ['Aurora', 'Redis Cache', 'Maps', 'Registration Service Enroll', 'ECS Capacity',
+        'Nginx proxy', 'DataExporter', 'SQS Dog', 'Backend', 'Backend Monitoring',
+        'Backend DriverSync', 'Backend KMS', 'Backend Elasticsearch', 'TrueFront Frontend',
+        'Audit Service', 'DriverData', 'Registration Service', 'TripProcessor', 'Thumbnail Service', 'Proxy'];
 
 
     @ViewChild('selectedEnvRef', { static: true }) selectedEnvRef: NgbTypeahead;

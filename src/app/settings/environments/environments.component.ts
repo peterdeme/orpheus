@@ -14,7 +14,7 @@ export class EnvironmentsComponent implements OnInit {
   cloudformationParameters: CloudformationParameter[] = [
     {
       key: 'EnvironmentName',
-      value: 'Budapest'
+      value: 'Alpha'
     },
     {
       key: 'SumoLogicURL',
@@ -39,7 +39,7 @@ export class EnvironmentsComponent implements OnInit {
     this.cloudformationParameters = this.cloudformationParameters.filter(x => x.key !== cfParamToRemove);
   }
 
-  addSlackHookUrl(): void {
+  aDriverDatalackHookUrl(): void {
     this.slackHookUrls.push({ url: '' });
   }
 

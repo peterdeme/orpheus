@@ -18,19 +18,19 @@ export class ReleaseCalendarComponent {
   events: CalendarEvent[] = [
     {
       start: moment().toDate(),
-      title: 'Bruce deploy on Internal',
+      title: 'TripProcessor deploy on Beta',
     },
     {
       start: moment(new Date()).add(1, 'days').toDate(),
-      title: 'UBI3 deploy on Internal',
+      title: 'Registration Service deploy on Beta',
     },
     {
       start: moment(new Date()).add(4, 'days').toDate(),
-      title: 'DDS Cass deploy on Production',
+      title: 'DriverData deploy on Production',
     },
     {
       start: moment(new Date()).add(4, 'days').toDate(),
-      title: 'DEX deploy on Staging',
+      title: 'DataExporter deploy on Beta',
     },
 
   ];
