@@ -1,8 +1,12 @@
-# Orpheus
+# Orpheus 🪗
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+A small website I built with Angular back in 2020 that I developed in my free time to manage the Cloudformation stacks of a previous company I worked for. We had some problems with release management (gigantic microservice infrastructure) so I tried to solve it. We did not end up using, but it was fun to work on. 
 
 Deployed to [https://orpheus.vercel.app/](https://orpheus.vercel.app/).
+
+<p align="center">
+  <img src="assets/site_screenshot.png">
+</p>
 
 ## Development server
 
